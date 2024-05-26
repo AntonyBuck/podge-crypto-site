@@ -37,3 +37,61 @@ function updateCountdown() {
 
 const countdownInterval = setInterval(updateCountdown, 1000);
 updateCountdown();
+
+// Snow effect
+const canvas = document.getElementById('snow-canvas');
+const ctx = canvas.getContext('2d');
+const snowflakes = [];
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+function createSnowflakes() {
+    const count = 100;
+    for (let i = 0; i < count; i++) {
+        snowflakes.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            opacity: Math.random(),
+            speedX: Math.random() * 2 - 1,
+            speedY: Math.random() * 3 + 1,
+            radius: Math.random() * 4 + 1
+        });
+    }
+}
+
+function drawSnowflakes() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+    ctx.beginPath();
+    for (const snowflake of snowflakes) {
+        ctx.moveTo(snowflake.x, snowflake.y);
+        ctx.arc(snowflake.x, snowflake.y, snowflake.radius, 0, Math.PI * 2, true);
+    }
+    ctx.fill();
+    updateSnowflakes();
+}
+
+function updateSnowflakes() {
+    for (const snowflake of snowflakes) {
+        snowflake.x += snowflake.speedX;
+        snowflake.y += snowflake.speedY;
+
+        if (snowflake.y > canvas.height) {
+            snowflake.y = 0;
+            snowflake.x = Math.random() * canvas.width;
+        }
+    }
+}
+
+function animateSnowflakes() {
+    drawSnowflakes();
+    requestAnimationFrame(animateSnowflakes);
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+createSnowflakes();
+animateSnowflakes();
