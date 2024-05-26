@@ -114,6 +114,7 @@ nav {
     font-size: 1em;
     font-weight: bold;
     gap: 10px;
+    flex-wrap: nowrap; /* Ensure boxes don't wrap unless necessary */
 }
 
 .time-box {
@@ -175,7 +176,7 @@ footer {
     z-index: 999; /* On top of everything else */
 }
 
-@media (max-width: 480px) {
+@media (max-width: 320px) {
     #countdown-timer {
         flex-direction: column;
     }
