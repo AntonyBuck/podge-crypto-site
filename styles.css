@@ -99,7 +99,7 @@ nav {
     text-align: center;
     margin: 40px auto;
     padding: 20px;
-    max-width: 800px;
+    max-width: 500px;
     background-color: #fff;
     border: 2px solid #ccc;
     border-radius: 20px;
@@ -109,7 +109,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: bold;
     gap: 10px;
 }
@@ -138,6 +138,7 @@ nav {
     background-color: #fff;
     border: 2px solid #ccc;
     border-radius: 20px;
+    color: #333; /* Ensuring the text color matches the rest */
 }
 
 .info-section {
