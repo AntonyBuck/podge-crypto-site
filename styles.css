@@ -48,10 +48,12 @@ nav {
     padding: 10px 20px;
     border-radius: 20px;
     transition: background-color 0.3s ease;
+    background-color: #e0f7fa;
+    border: 1px solid #ccc;
 }
 
 #nav-links a:hover {
-    background-color: #e0f7fa;
+    background-color: #b2ebf2;
 }
 
 .menu-icon {
@@ -83,6 +85,24 @@ nav {
     padding: 20px;
     border-radius: 20px;
     background-color: #fff;
+}
+
+.info-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-top: 2px solid #ccc;
+    margin-top: 40px;
 }
 
 @media (max-width: 768px) {
