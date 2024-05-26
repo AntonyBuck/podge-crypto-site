@@ -175,6 +175,16 @@ footer {
     z-index: 999; /* On top of everything else */
 }
 
+@media (max-width: 480px) {
+    #countdown-timer {
+        flex-direction: column;
+    }
+
+    .time-box {
+        margin-bottom: 10px;
+    }
+}
+
 @media (max-width: 768px) {
     #nav-links {
         display: none;
@@ -197,13 +207,5 @@ footer {
 
     .menu.open #nav-links {
         display: flex;
-    }
-
-    #countdown-timer {
-        flex-direction: column;
-    }
-
-    .time-box {
-        margin-bottom: 10px;
     }
 }
